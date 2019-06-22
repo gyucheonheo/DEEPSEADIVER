@@ -1,0 +1,33 @@
+execve("./test", ["./test"], [/* 25 vars */]) = 0 <0.000217>
+brk(NULL)                               = 0xd07000 <0.000009>
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory) <0.000021>
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory) <0.000020>
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000025>
+fstat(3, {st_mode=S_IFREG|0644, st_size=88762, ...}) = 0 <0.000013>
+mmap(NULL, 88762, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6cb79b0000 <0.000017>
+close(3)                                = 0 <0.000053>
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory) <0.000020>
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000030>
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\t\2\0\0\0\0\0"..., 832) = 832 <0.000143>
+fstat(3, {st_mode=S_IFREG|0755, st_size=1868984, ...}) = 0 <0.000011>
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6cb79af000 <0.000013>
+mmap(NULL, 3971488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6cb73d7000 <0.000015>
+mprotect(0x7f6cb7597000, 2097152, PROT_NONE) = 0 <0.000020>
+mmap(0x7f6cb7797000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7f6cb7797000 <0.000029>
+mmap(0x7f6cb779d000, 14752, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6cb779d000 <0.000022>
+close(3)                                = 0 <0.000042>
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6cb79ae000 <0.000021>
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6cb79ad000 <0.000018>
+arch_prctl(ARCH_SET_FS, 0x7f6cb79ae700) = 0 <0.000023>
+mprotect(0x7f6cb7797000, 16384, PROT_READ) = 0 <0.000029>
+mprotect(0x600000, 4096, PROT_READ)     = 0 <0.000019>
+mprotect(0x7f6cb79c6000, 4096, PROT_READ) = 0 <0.000026>
+munmap(0x7f6cb79b0000, 88762)           = 0 <0.000042>
+brk(NULL)                               = 0xd07000 <0.000013>
+brk(0xd28000)                           = 0xd28000 <0.000039>
+open("test.dat", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3 <0.000044>
+fstat(3, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0 <0.000012>
+write(3, "Hello\0", 6)                  = 6 <0.000059>
+close(3)                                = 0 <0.000257>
+exit_group(0)                           = ?
++++ exited with 0 +++

@@ -1,0 +1,35 @@
+execve("./test_100MB_write", ["./test_100MB_write"], [/* 25 vars */]) = 0 <0.000378>
+brk(NULL)                               = 0xb15000 <0.000016>
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory) <0.000026>
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory) <0.000018>
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3 <0.000021>
+fstat(3, {st_mode=S_IFREG|0644, st_size=88762, ...}) = 0 <0.000036>
+mmap(NULL, 88762, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f4689d80000 <0.000021>
+close(3)                                = 0 <0.000010>
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory) <0.000026>
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3 <0.000023>
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\t\2\0\0\0\0\0"..., 832) = 832 <0.000039>
+fstat(3, {st_mode=S_IFREG|0755, st_size=1868984, ...}) = 0 <0.000017>
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4689d7f000 <0.000018>
+mmap(NULL, 3971488, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f46897a7000 <0.000026>
+mprotect(0x7f4689967000, 2097152, PROT_NONE) = 0 <0.000027>
+mmap(0x7f4689b67000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7f4689b67000 <0.000042>
+mmap(0x7f4689b6d000, 14752, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f4689b6d000 <0.000028>
+close(3)                                = 0 <0.000007>
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4689d7e000 <0.000007>
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4689d7d000 <0.000007>
+arch_prctl(ARCH_SET_FS, 0x7f4689d7e700) = 0 <0.000006>
+mprotect(0x7f4689b67000, 16384, PROT_READ) = 0 <0.000014>
+mprotect(0x600000, 4096, PROT_READ)     = 0 <0.000009>
+mprotect(0x7f4689d96000, 4096, PROT_READ) = 0 <0.000011>
+munmap(0x7f4689d80000, 88762)           = 0 <0.000024>
+mmap(NULL, 104861696, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f46833a6000 <0.000023>
+brk(NULL)                               = 0xb15000 <0.000006>
+brk(0xb36000)                           = 0xb36000 <0.000006>
+open("test_100MB_write.dat", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3 <0.001989>
+fstat(3, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0 <0.000017>
+write(3, "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 104857600) = 104857600 <0.125746>
+close(3)                                = 0 <0.044611>
+munmap(0x7f46833a6000, 104861696)       = 0 <0.000540>
+exit_group(0)                           = ?
++++ exited with 0 +++
