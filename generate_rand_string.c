@@ -3,7 +3,8 @@
 #include <string.h>
 
 char *
-generate_rand_string (size_t length)
+generate_rand_string (length)
+     size_t length;
 {
   static char charset[] = "abcdefghijklmnopqrstuvwxzyABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";
   char *rand_str;
