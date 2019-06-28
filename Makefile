@@ -33,7 +33,7 @@ log:
 tar:
 	tar -czvf log_file.tar.gz ./log_file
 clean:
-	rm -rf *.o $(WRITE_OBJS) $(OPEN_OBJS) $(WRITE_NO_CACHE_OBJS) *~
+	rm -rf *.o $(WRITE_OBJS) $(OPEN_OBJS) $(WRITE_NO_CACHE_OBJS)*~
 clean_data:
 	rm -rf *.dat
 clean_log:
