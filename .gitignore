@@ -1,2 +1,7 @@
-./*.out
-./*.tar.gz
+perf*
+*.out
+*.tar.gz
+*.svg
+out.*
+*.dat
+
