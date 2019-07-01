@@ -3,13 +3,17 @@ CCFLAGS := -g -Wall
 LDFLAGS :=
 RAND = randstr.h generate_rand_string.c
 WRITE_OBJS = test test_1MB_write test_100MB_write test_1MB_to_100MB_write test_100MB_to_1GB_write test_1GB_to_MAX_write 
-WRITE_NO_CACHE_OBJS = test_no_cache test_1GB_no_cache
+WRITE_NO_CACHE_OBJS = test_no_cache test_1GB_no_cache test_hg_pg_sizes test_reg_pg_sizes
 OPEN_OBJS = test_fopen_once test_fopen_multiple
 
 all: $(WRITE_OBJS) $(WRITE_NO_CACHE_OBJS) $(OPEN_OBJS)
 
 test:
 	$(CC) test.c -o test
+test_hg_pg_sizes:
+	$(CC) test_hg_pg_sizes.c $(RAND) -o test_hg_pg_sizes
+test_reg_pg_sizes:
+	$(CC) test_reg_pg_sizes.c $(RAND) -o test_reg_pg_sizes
 test_no_cache:
 	$(CC) test_no_cache.c $(RAND) -o test_no_cache
 test_1GB_no_cache:
@@ -33,7 +37,7 @@ log:
 tar:
 	tar -czvf log_file.tar.gz ./log_file
 clean:
-	rm -rf *.o $(WRITE_OBJS) $(OPEN_OBJS) $(WRITE_NO_CACHE_OBJS)*~
+	rm -rf *.o $(WRITE_OBJS) $(OPEN_OBJS) $(WRITE_NO_CACHE_OBJS) a.out *~
 clean_data:
 	rm -rf *.dat
 clean_log:
