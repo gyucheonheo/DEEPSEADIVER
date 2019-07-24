@@ -23,7 +23,7 @@ uint64_t write_t(from,to,n)
 		from[i] = to[i];
 	}
 
-	__asm__ __volatile ("RDTSCP\n\t"
+	__asm__ __volatile__ ("RDTSCP\n\t"
 			    "mov %%edx, %0\n\t"
 			    "mov %%eax, %1\n\t"
 			    "CPUID\n\t": "=r" (hi_end), "=r" (lo_end)::
