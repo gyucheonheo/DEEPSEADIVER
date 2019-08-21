@@ -1,3 +1,4 @@
+import sys
 import os
 import re
 import numpy as np
@@ -8,7 +9,7 @@ def getMedian(lst):
     return (sum(s[n//2-1:n//2+1])/2.0, s[n//2])[n % 2] if n else None
 
 def main():
-    PATH = "../data_generator/data/ram_block_device/"
+    PATH = "../data_generator/data/ram_ext2/"
     dir_list = os.listdir(PATH)
     dir_count = len(os.listdir(PATH))
     data = {}
@@ -28,10 +29,8 @@ def main():
                     pass
         med = getMedian(datum)
         avg = sum(datum)/float(len(datum))
-
         print(str(bs*2)+","+str(avg)+","+str(med))
         bs*=2
-        
             
 if __name__ == "__main__":
     main()

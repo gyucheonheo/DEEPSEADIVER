@@ -1,3 +1,4 @@
+import sys
 import os
 import re
 import numpy as np
@@ -8,7 +9,15 @@ def getMedian(lst):
     return (sum(s[n//2-1:n//2+1])/2.0, s[n//2])[n % 2] if n else None
 
 def main():
-    PATH = "./data/ram_fs/"
+    candidates = ["ext2", "ext4"]
+    print("Please select filesystems")
+    for x in candidates:
+        print("==>"+x)
+    data = sys.stdin.readlines()
+    if data not in candidates:
+        print("ERROR : not support")
+        return
+    PATH = "./data/ram_"+str(data)
     dir_list = os.listdir(PATH)
     dir_count = len(os.listdir(PATH))
     data = {}
